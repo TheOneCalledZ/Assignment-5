@@ -60,8 +60,8 @@ class RecipeUpdate(BaseModel):
 
 class Recipe(RecipeBase):
     id: int
-    sandwich: Sandwich = None
-    resource: Resource = None
+    sandwich: Sandwich = None # type: ignore
+    resource: Resource = None # type: ignore
 
     class ConfigDict:
         from_attributes = True
@@ -84,7 +84,7 @@ class OrderDetailUpdate(BaseModel):
 class OrderDetail(OrderDetailBase):
     id: int
     order_id: int
-    sandwich: Sandwich = None
+    sandwich: Sandwich = None # type: ignore
 
     class ConfigDict:
         from_attributes = True
@@ -107,7 +107,7 @@ class OrderUpdate(BaseModel):
 class Order(OrderBase):
     id: int
     order_date: Optional[datetime] = None
-    order_details: list[OrderDetail] = None
+    order_details: list[OrderDetail] = None # type: ignore
 
     class ConfigDict:
         from_attributes = True
